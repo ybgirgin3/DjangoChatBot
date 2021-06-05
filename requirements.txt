@@ -1,0 +1,5 @@
+django
+django-crispy-forms
+django-random-image-from-folder
+fontawesome-free
+TurkishStemmer

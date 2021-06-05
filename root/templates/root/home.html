@@ -1,0 +1,153 @@
+<!-- templates/home.html-->
+{% extends 'root/base.html' %}
+
+
+{% block title %}Home{% endblock %}
+{% load static %}
+{% block content %}
+<h2>Özdil Telekom Resmi Sitesine Hoşgeldiniz</h2>
+{% if user.is_authenticated %}
+  Merhaba Sayın, {{ user.username }}!
+  <p><a href="{% url 'logout' %}">Çıkış yap</a></p>
+{% else %}
+  <p>Giriş yapmamışsınız gibi görünüyor</p>
+  Hizmetlerimizden yararlanmak için lütfen <a href="{% url 'login' %}">Giriş Yap</a>ın
+{% endif %}
+
+<br>
+Ürünler
+<!-- bu kısma gelecek flexboxlar -->
+
+{% load random_image %}
+<div class="flexboxs">
+  <!-- 3 tane falan olsa yeter-->
+  <div class="flexbox" id="firstflex">
+    <div class="img">
+      <img src="{{ MEDIA_URL }}{% random_image %}">
+      {{ random_image.name }}
+    </div>
+    <div class="price">{{ price.0 }} TL</div>
+  </div>
+  <div class="flexbox" id="secondflex">
+    <div class="img">
+      <img src="{{ MEDIA_URL }}{% random_image %}">
+
+    </div>
+    <div class="price">{{ price.1 }} TL</div>
+  </div>
+  <div class="flexbox" id="thirdflex">
+    <div class="img">
+      <img src="{{ MEDIA_URL }}{% random_image %}">
+    </div>
+    <div class="price">{{ price.2 }} TL</div>
+  </div>
+  <div class="flexbox" id="firstflex">
+    <div class="img">
+      <img src="{{ MEDIA_URL }}{% random_image %}">
+    </div>
+    <div class="price">{{ price.3 }} TL</div>
+  </div>
+  <div class="flexbox" id="secondflex">
+    <div class="img">
+      <img src="{{ MEDIA_URL }}{% random_image %}"></div>
+    <div class="price">{{ price.4 }} TL</div>
+  </div>
+  <div class="flexbox" id="thirdflex">
+    <div class="img">
+      <img src="{{ MEDIA_URL }}{% random_image %}"></div>
+    <div class="price">{{ price.5 }} TL</div>
+  </div>
+  <div class="flexbox" id="firstflex">
+    <div class="img">
+      <img src="{{ MEDIA_URL }}{% random_image %}"></div>
+    <div class="price">{{ price.6 }} TL</div>
+  </div>
+  <div class="flexbox" id="secondflex">
+    <div class="img">
+      <img src="{{ MEDIA_URL }}{% random_image %}"></div>
+    <div class="price">{{ price.7 }} TL</div>
+  </div>
+  <div class="flexbox" id="thirdflex">
+    <div class="img">
+      <img src="{{ MEDIA_URL }}{% random_image %}"></div>
+    <div class="price">{{ price.8 }} TL</div>
+  </div>
+  <div class="flexbox" id="firstflex">
+    <div class="img">
+      <img src="{{ MEDIA_URL }}{% random_image %}"></div>
+    <div class="price">{{ price.9 }} TL</div>
+  </div>
+  <div class="flexbox" id="secondflex">
+    <div class="img">
+      <img src="{{ MEDIA_URL }}{% random_image %}"></div>
+    <div class="price">{{ price.10 }} TL</div>
+  </div>
+  <div class="flexbox" id="thirdflex">
+    <div class="img">
+      <img src="{{ MEDIA_URL }}{% random_image %}"></div>
+    <div class="price">{{ price.11 }} TL</div>
+  </div>
+  <div class="flexbox" id="firstflex">
+    <div class="img">
+      <img src="{{ MEDIA_URL }}{% random_image %}"></div>
+    <div class="price">{{ price.12 }} TL</div>
+  </div>
+  <div class="flexbox" id="secondflex">
+    <div class="img">
+      <img src="{{ MEDIA_URL }}{% random_image %}"></div>
+    <div class="price">{{ price.13 }} TL</div>
+  </div>
+  <div class="flexbox" id="thirdflex">
+    <div class="img">
+      <img src="{{ MEDIA_URL }}{% random_image %}"></div>
+    <div class="price">{{ price.14 }} TL</div>
+  </div>
+  <div class="flexbox" id="firstflex">
+    <div class="img">
+      <img src="{{ MEDIA_URL }}{% random_image %}"></div>
+    <div class="price">{{ price.15 }} TL</div>
+  </div>
+  <div class="flexbox" id="secondflex">
+    <div class="img">
+      <img src="{{ MEDIA_URL }}{% random_image %}"></div>
+    <div class="price">{{ price.16 }} TL</div>
+  </div>
+  <div class="flexbox" id="thirdflex">
+    <div class="img">
+      <img src="{{ MEDIA_URL }}{% random_image %}"></div>
+    <div class="price">{{ price.17 }} TL</div>
+  </div>
+  <div class="flexbox" id="firstflex">
+    <div class="img">
+      <img src="{{ MEDIA_URL }}{% random_image %}"></div>
+    <div class="price">{{ price.18 }} TL</div>
+  </div>
+  <div class="flexbox" id="secondflex">
+    <div class="img">
+      <img src="{{ MEDIA_URL }}{% random_image %}"></div>
+    <div class="price">{{ price.19 }} TL</div>
+  </div>
+  <div class="flexbox" id="thirdflex">
+    <div class="img">
+      <img src="{{ MEDIA_URL }}{% random_image %}"></div>
+    <div class="price">{{ price.20 }} TL</div>
+  </div>
+  <div class="flexbox" id="firstflex">
+    <div class="img">
+      <img src="{{ MEDIA_URL }}{% random_image %}"></div>
+    <div class="price">{{ price.21 }} TL</div>
+  </div>
+  <div class="flexbox" id="secondflex">
+    <div class="img">
+      <img src="{{ MEDIA_URL }}{% random_image %}"></div>
+    <div class="price">{{ price.22 }} TL</div>
+  </div>
+  <div class="flexbox" id="thirdflex">
+    <div class="img">
+      <img src="{{ MEDIA_URL }}{% random_image %}"></div>
+    <div class="price">{{ price.23 }} TL</div>
+  </div>
+
+
+
+{% endblock %}

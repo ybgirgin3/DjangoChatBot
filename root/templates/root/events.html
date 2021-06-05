@@ -1,0 +1,28 @@
+{% extends "root/base.html" %}
+{% block content %}
+
+<h2>
+  Tüm Kayıtlı Arızalar
+</h2>
+
+
+<br>
+<br>
+
+
+{% for user in user_list %}
+<ul><span style="color: #28a745">Kullanıcı Adı:</span> {{ user.user }}
+        <ul>
+          <li><span style="color: #28a745">Hata Adı:</span> {{ user.name }}
+                <ul>
+                    {% for item in user.item_set.all %}
+                        {{ item }}<br>
+                    {% endfor %}
+                </ul>
+ 
+            </li>
+        </ul>
+    </ul>
+{% endfor %}
+
+{% endblock %}

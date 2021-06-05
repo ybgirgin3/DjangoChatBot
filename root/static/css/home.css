@@ -1,0 +1,55 @@
+.flexboxs {
+    width: 100%;
+    height: 1200px;
+    display: inline-flexbox;
+}
+
+
+.flexbox {
+    width: 20%;
+    height: 25%;
+    float: left;
+    margin: 25px;
+    /*background-color: white;*/
+    border: .5px solid #777;
+    transition: all .3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.flexbox:hover {
+    /*box-shadow: 0px 0px 10px 0px #28A745;*/
+    box-shadow: 0px 0px 20px 0px #888;
+    transition: all .2s ease;
+}
+
+img {
+    width: 100px;
+}
+
+.img {
+    width: 80%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*background-color: #6610f2;*/
+    /*border: .5px solid #777;*/
+
+
+}
+
+.price {
+    width: 80%;
+    height: 20%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*background-color: #dc3545;*/
+    border: .5px solid #777;
+
+}

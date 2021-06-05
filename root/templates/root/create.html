@@ -1,0 +1,51 @@
+{% extends "root/base.html" %}
+
+{% block title %} Yeni Bir Arıza Kaydı Oluştur {% endblock %}
+
+{% block content %} 
+{% if user.is_authenticated %}
+
+
+<h2>Arıza Kayıt Ekranına Hoşgeldiniz</h2>
+<fieldset>
+    <legend>NOT:</legend>
+    Size en iyi hizmeti verebilmemiz için 
+    lütfen bildirmek istediğiniz arıza kaydının 
+    daha önce bildirilmediğine emin olunuz. <br>
+    Birden fazla bildirilmiş olunan bildirimler yanıtsız
+    bırakılmaktadır.
+
+    Kayıtlı bildirimleri kontrol etmek için 
+    Chat Botumuzdan yardım alabilir ya da direk olarak 
+    <a href="http://127.0.0.1:8000/events/">Tüm Liste</a>
+    sayfasına giderek kontrol edebilirsiniz
+</fieldset>
+
+<br>
+<br>
+<br>
+<br>
+<h3>Arıza Kaydı Oluştur</h3>
+<form method="post" action="/create/" class="form-group">
+    {% csrf_token %}
+    <div class="input-group mb-3">
+        {{ form.name }}
+        <div class="input-group-prepend">
+            <button type="submit" name="save" class="btn btn-success">Oluştur</button>
+        </div>
+    </div>
+</form>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">Log In</a>
+{% endif %}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}

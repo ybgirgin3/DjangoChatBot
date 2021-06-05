@@ -1,0 +1,62 @@
+Django Chat App
+
+Python Nedir ?
+  C programlama dili kullanılarak, 90'lı yıllarda geliştirilmiş olan bir programlama dilidir. 
+  Basit söz dizimi ile, pseudo kod dizimini andırır. Yeni başlayanlar için ilk önerilen programlama dilidir.
+  Yapay Zeka, Veri Bilimi, Veri Görselleştirme, Görüntü İşleme gibi alanlarda ilk olarak tercih edilen dillerden biridir.
+
+Django Nedir ?
+  Django, en temelde saf python kullanılarak oluşturulmuş bir profesyonel websitesi oluşturma kütüphanesidir.
+  Projeyi localhost üzerinde native olarak çalıştırmaya yarayan, jinja template'leri kullanılarak oluşturulmuş html belgelerini renderlayabilen ve bunları tarayıcıların anlayabileceği bir biçime sokan en popüler python web kütüphanelerinden biridir.
+
+Proje Hakkında:
+  Projemizde MVC (Model-View-Controller) yapısına benzer bir yapı kullanılmıştır.
+
+  Proje Alanları:
+    View:
+      views.py isimli dosyalar projede en temel işlem olan veritabanı ile websitesi arasındaki bağlantıyı sağlar.
+      bu dosya içinde tanımlamış olan herbir fonksiyon return ettiği html dosyası (örn. root/create.html) içinde jinja templatelerinin listeleyeceği veritabanı parçalarını döndürür.
+      bu işlemler arasında;
+          veritabanına kullanıcı kaydetme,
+          giriş yapacak olan kullanıcının bilgilerini doğrulama,
+          veritabanına metin, sayı, tarih, id gibi verileri kaydetme
+      gibi işlemler vardır.
+
+
+      Uygulama içi Viewlar:
+        1. home:
+          Jinja templatelerinin render etmesi için gerekli olan home.html dosyasını "localhost:8000/" urlsi üzerinden ulaşmamızı sağlar
+        2. create:
+          Arıza kayıt sayfasını renderlayıp içindeki form kısmına kullanıcının girdiği bilgiler ile veritabanı arasında bağ kurulmasını sağlar
+        3. all_events:
+          Veritabanında kayıtlı olan tüm arıza kayıtlarını, kayıt eden kullanıcıyı ve herbir arıza kaydının alt elemanlarını html dosyası içinde renderlamamıza olanak sağlar.
+        4. index:
+          view.html dosyası üzerinden login halinde siteyi kullanan kullanıcının kaydettiği hataları detaylı olarak incelemek istediğinde üzerine tıklayarak herbir kayıtlı hata için geçici url oluşturup, yine herbir hata için aynı sayfa dizimini oluşturmamızı sağlar
+
+
+
+    Forms:
+      forms.py isimli dosyalar projede views içinde return edilen html dosyalarında, eğer dosya kullanıcıdan bir girdi alacaksa yine jinja templateler üzerinden render edilecek olan kullanıcı girdi alanlarını tanımlamak, detaylandırmak öncelik tanımak, kullanıcının adına veritabanından oluşturulmuş alanları doldurmak için kullanılan alanların genel adıdır.
+      bu alanların içinde;
+          kullanıcı hesap oluşturma formları,
+          kullanıcı hesap giriş formları,
+          kullanıcının sitenin amacına yönelik içerik eklemesi
+      gibi işlemler vardır.
+
+      Uygulama için formlar:
+        Arıza kaydı oluşturmak için html dosyası üzerinden kullanıcıdan alınacak olan girdilerin alanını oluşturur.
+
+
+    Models:
+      models.py isimli dosyalar forms kısmından kullanıcı tarafından alınacak olan verilerin veritabanına kaydının tam anlamıyla tamamlandığı kısımdır. 
+      Bu modüller veritabanına kaydedilecek olan tüm alanları, verilerin kategorize edileceği kısımları içermelidir. 
+
+
+
+
+Karşılaşılan sıkıntılar:
+  Django ile çalışırken;
+  1- en çok yaşanılan sıkıntı models üzerinde, veritabanı için zaten ayrılmış olan kısımlara yeni ek alanlar oluşturmaktı.
+    Çözüm: Çünkü bunların birbiri ile olan bağlantıları ve çakışma sorunlarını ortadan kaldırmak için birkaç defa veritabanının silinip tekrardan oluşturulması, yeniden admin kullanıcı oluşturma, yeniden içerik ekleme gibi işlemler yapmak gerekti.
+  2- views modülündeki fonksiyonların return edilmesi jinja templatelerin üzerinden bu return edilen fonksiyonları parçalanıp html sayfasında gösterilmesi
+    ÇÖzüm: jinja template projesinin kendi sitesinden parçalama ve birleştirme kısımları detaylıca incelenip, dönülen fonksiyonların herbir parçasının ekrana ne yazdırdığını kontrol ederek başarılı bir çıktı alındı.

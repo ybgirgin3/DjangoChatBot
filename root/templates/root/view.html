@@ -1,0 +1,37 @@
+# view.html
+{% extends "root/base.html" %}
+
+{% block title %}
+View
+{% endblock %}
+
+
+{% block content %}
+
+
+<h2> 
+  Arıza Bildirimlerim
+</h2>
+{{ user }} kullancısı tarafından kayıt edilen arızalar
+{% for td in user.ariza.all %}
+<p><a href="/{{td.id}}">{{td.name}}</a></p>
+{% endfor %}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+{% endblock %}

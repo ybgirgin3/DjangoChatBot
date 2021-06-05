@@ -1,0 +1,15 @@
+{% extends "root/base.html" %}
+
+{% block title %} Yeni Bir Arıza Kaydı Oluştur {% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h1>Register</h1>
+
+<form action="{% url 'register' %}" method="post">
+  {% csrf_token %}
+  {{ form|crispy }}
+
+  <p>Zaten Hesabınız Var mı ? <a href="/login">Giriş Yapın</a></p>
+  <button type="submit" id="submit" class="btn btn-success">Kaydol</button>
+</form>
+{% endblock %}
